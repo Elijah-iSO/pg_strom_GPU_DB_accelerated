@@ -1,0 +1,11 @@
+---
+all:
+  children:
+    dbservers:
+      hosts:
+        "{{ postgresql_ip }}":
+          # Переменные хоста, если нужны
+    webservers:
+      hosts:
+        "{{ airflow_ip }}":
+          # Переменные хоста, если нужны
