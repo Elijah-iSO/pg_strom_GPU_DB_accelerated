@@ -1,11 +1,9 @@
 ---
-all:
-  children:
-    dbservers:
-      hosts:
-        "{{ postgresql_ip }}":
-          # Переменные хоста, если нужны
-    webservers:
-      hosts:
-        "{{ airflow_ip }}":
-          # Переменные хоста, если нужны
+dbservers:
+  hosts:
+    "{{ postgresql_ip }}":
+      ansible_python_interpreter: /usr/bin/python3.12
+webservers:
+  hosts:
+    "{{ airflow_ip }}":
+      ansible_python_interpreter: /usr/bin/python3.12
