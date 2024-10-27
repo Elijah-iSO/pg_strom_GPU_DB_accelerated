@@ -1,0 +1,21 @@
+---
+- name: Install for Debian-based
+    apt:
+      name:
+        - python3
+        - python3-pip
+        - psycopg2-dev
+        - apache2
+      state: present
+  when: ansible_facts_os_family == 'Debian'
+
+- name: Install for RHEL-based
+    yum:
+      name:
+        - python3
+        - python3-pip
+        - postgresql-devel
+        - httpd
+      state: present
+  when: ansible_os_family == 'RedHat'
+    
